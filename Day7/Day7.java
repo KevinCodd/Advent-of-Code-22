@@ -22,7 +22,9 @@ public class Day7 {
 
                     }
                     else {
-                        filepath+=line[2]+"/";
+                        if(line[2].equals("/")) filepath = "//";
+                        else
+                            filepath+=line[2]+"/";
                         if(!contents.containsKey(filepath)){
                             contents.put(filepath, new ArrayList<String>());
                             sizes.put(filepath,0);
